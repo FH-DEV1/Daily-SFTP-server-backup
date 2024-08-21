@@ -133,7 +133,7 @@ def main():
             log_message(f"Uploading to {serv_name}", "info")
             url = f"https://{serv_name}.gofile.io/contents/uploadfile"
             files=[
-            ('file',(f"{zip_name}.zip",open(zip_file,'rb'),'application/zip'))
+            ('file',(zip_file,open(zip_file,'rb'),'application/zip'))
             ]
             response = json.loads(requests.request("POST", url, files=files).text)["data"]["downloadPage"]
 
